@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./reset.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Frontend Mentor | Stats preview card component</title>
+  </head>
+  <body>
+    <main>
+      <section class="stats-card">
+        <picture class="card-picture">
+          <source
+            media="(min-width: 65rem)"
+            srcset="./images/image-header-desktop.jpg"
+          />
+          <img
+            src="./images/image-header-mobile.jpg"
+            alt="women working and chatting"
+          />
+        </picture>
+
+        <div class="card-content">
+          <h1 class="title">
+            Get <span>insights</span> that help your business grow.
+          </h1>
+          <p class="text">
+            Discover the benefits of data analytics and make better decisions
+            regarding revenue, customer experience, and overall efficiency.
+          </p>
+
+          <div class="stats-details">
+            <div class="stats">
+              <p class="stats-num">10k+</p>
+              <p class="stats-type">companies</p>
+            </div>
+            <div class="stats">
+              <p class="stats-num">314</p>
+              <p class="stats-type">templates</p>
+            </div>
+            <div class="stats">
+              <p class="stats-num">12m+</p>
+              <p class="stats-type">queries</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+  </body>
+</html>

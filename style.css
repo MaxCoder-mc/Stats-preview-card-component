@@ -1,0 +1,169 @@
+:root {
+  /* ## Colors */
+
+  --Very-dark-blue: #090b1a; /*(main background)*/
+  --Dark-desaturated-blue: #1b1938; /*(card background)*/
+  --Soft-violet: #aa5cdb; /*(accent)*/
+
+  --Slightly-transparent-white-main-p: #ffffffbf; /*(main paragraph)*/
+  --Slightly-transparent-white-stat-headings: #ffffff99;
+  --White: #ffffff; /*(main heading, stats)*/
+
+  /* ## Typography */
+  --font: "Inter", sans-serif;
+  --Text-Preset-1: 700 calc((28 / 16) * 1rem) / 2rem var(--font);
+  --Text-Preset-2: 700 calc((24 / 16) * 1rem) var(--font);
+  --Text-Preset-3: 400 calc((15 / 16) * 1rem) / 1.6 var(--font);
+  --Text-Preset-4: 400 calc((12 / 16) * 1rem) / 1.56 var(--font);
+
+  /* ## Spacing */
+  --XL-64: calc((64 / 16) * 1rem);
+  --L-40: calc((40 / 16) * 1rem);
+  --M-32: calc((32 / 16) * 1rem);
+  --S-24: calc((24 / 16) * 1rem);
+  --XS-20: calc((20 / 16) * 1rem);
+
+  /* mobile */
+  --Card-Width: calc((450 / 16) * 1rem);
+}
+body {
+  background-color: var(--Very-dark-blue);
+
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stats-card {
+  background-color: var(--Dark-desaturated-blue);
+  max-width: var(--Card-Width);
+  margin: var(--XL-64) var(--XS-20);
+  border-radius: 0.5rem;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/********** Card Picture **********/
+.card-picture {
+  position: relative;
+}
+.card-picture::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ab5cdb; /* Purple overlay */
+  mix-blend-mode: multiply;
+  pointer-events: none; /* Makes sure the overlay doesn’t interfere with clicks */
+}
+
+/********** Card Content **********/
+.card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  padding: var(--L-40) var(--M-32);
+  margin-inline: auto;
+}
+.title {
+  font: var(--Text-Preset-1);
+  color: var(--White);
+  letter-spacing: 1px;
+
+  margin-bottom: 1rem;
+}
+.title > span {
+  color: var(--Soft-violet);
+}
+.text {
+  font: var(--Text-Preset-3);
+  color: var(--Slightly-transparent-white-main-p);
+  max-width: 95%;
+  margin-bottom: var(--M-32);
+}
+
+/********** Stats Details **********/
+.stats-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--M-32);
+}
+.stats {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+.stats-num {
+  font: var(--Text-Preset-2);
+  color: var(--White);
+}
+.stats-type {
+  font: var(--Text-Preset-4);
+  color: var(--Slightly-transparent-white-stat-headings);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/*****************************/
+/********** QUERIES **********/
+/*****************************/
+@media (min-width: 65rem) {
+  :root {
+    --Text-Preset-1: 700 calc((36 / 16) * 1rem) / 2.75rem var(--font);
+    --Card-Width: calc((1110 / 16) * 1rem);
+  }
+  .stats-card {
+    flex-direction: row;
+    justify-content: space-between;
+    height: calc((446 / 16) * 1rem);
+  }
+
+  /********** Card Picture **********/
+  .card-picture {
+    align-self: stretch;
+  }
+  .card-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /********** Card Content **********/
+  .card-content {
+    flex: 1;
+    align-items: start;
+    text-align: start;
+    padding-left: var(--XL-64);
+    order: -1;
+  }
+  .title {
+    margin-bottom: 1.75rem;
+    width: 88%;
+  }
+  .text {
+    margin-bottom: var(--XL-64);
+    width: 74%;
+  }
+
+  /********** Stats Details **********/
+  .stats-details {
+    flex-direction: row;
+    align-items: start;
+    gap: var(--XL-64);
+  }
+  .stats {
+    align-items: start;
+  }
+}
